@@ -79,8 +79,13 @@ def main():
                     ram_min_input=int(input("ingrese la ram mínima: "))
                     ram_max_input=int(input("Ingrese la ram máxima: "))
                     precio_input=int(input("Ingrese el precio máximo "))
-                    busqueda_ram_precio(ram_min_input, ram_max_input, precio_input)
-                    break
+                    if ram_min_input > 0 and ram_max_input > 0 \
+                        and precio_input > 0 and ram_min_input <= ram_max_input:
+                        
+                        busqueda_ram_precio(ram_min_input, ram_max_input, precio_input)
+                        break
+                    else:
+                        print("los valores deben ser numeros enteros mayores de 0")
                 except ValueError:
                     print("Ingrese un número entero.")
                     
